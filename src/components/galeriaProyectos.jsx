@@ -153,28 +153,6 @@ export default function galeriaProyectos() {
           ))}
         </div>
 
-        {/* Estadísticas */}
-        <div className='bg-white rounded-2xl p-8 shadow-xl mb-16'>
-          <div className='grid md:grid-cols-4 gap-8 text-center'>
-            <div>
-              <div className='text-4xl font-bold text-[#6FAD46] mb-2'>110+</div>
-              <div className='text-gray-600 font-medium'>Proyectos Completados</div>
-            </div>
-            <div>
-              <div className='text-4xl font-bold text-[#6FAD46] mb-2'>35</div>
-              <div className='text-gray-600 font-medium'>Años de Experiencia</div>
-            </div>
-            <div>
-              <div className='text-4xl font-bold text-[#6FAD46] mb-2'>98%</div>
-              <div className='text-gray-600 font-medium'>Clientes Satisfechos</div>
-            </div>
-            <div>
-              <div className='text-4xl font-bold text-[#6FAD46] mb-2'>24/7</div>
-              <div className='text-gray-600 font-medium'>Soporte Técnico</div>
-            </div>
-          </div>
-        </div>
-
         {/* Call to Action */}
         <div className='text-center'>
           <h3 className='text-3xl font-bold text-gray-800 mb-4'>

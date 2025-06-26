@@ -17,7 +17,7 @@ export default function aboutUs() {
         </div>
 
         {/* Contenido principal */}
-        <div className='grid lg:grid-cols-2 gap-12 items-center mb-16'>
+        <div className='grid lg:grid-cols-2 gap-12 items-center'>
           
           {/* Lado izquierdo - Imagen */}
           <div className='relative'>
@@ -51,63 +51,8 @@ export default function aboutUs() {
               instalación y mantenimiento continuo. Hemos trabajado con hoteles, edificios comerciales 
               y residencias, siempre respetando el equilibrio ecológico.
             </p>
-
-            <div className='grid grid-cols-2 gap-6 mt-8'>
-              <div className='text-center p-4 bg-white rounded-lg shadow-md'>
-                <div className='text-3xl font-bold text-[#6FAD46] mb-2'>500+</div>
-                <div className='text-gray-600 font-medium'>Proyectos Completados</div>
-              </div>
-              <div className='text-center p-4 bg-white rounded-lg shadow-md'>
-                <div className='text-3xl font-bold text-[#6FAD46] mb-2'>35+</div>
-                <div className='text-gray-600 font-medium'>Años de Experiencia</div>
-              </div>
-            </div>
           </div>
         </div>
-
-        {/* Valores y características */}
-        <div className='grid md:grid-cols-3 gap-8'>
-          
-          {/* Valor 1 */}
-          <div className='text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mx-auto mb-4'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-              </svg>
-            </div>
-            <h4 className='text-xl font-bold text-gray-800 mb-3'>Compromiso Ecológico</h4>
-            <p className='text-gray-600'>
-              Utilizamos plantas nativas y técnicas sostenibles que respetan el medio ambiente.
-            </p>
-          </div>
-
-          {/* Valor 2 */}
-          <div className='text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mx-auto mb-4'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-              </svg>
-            </div>
-            <h4 className='text-xl font-bold text-gray-800 mb-3'>Servicios Integrales</h4>
-            <p className='text-gray-600'>
-              Ofrecemos diseño, instalación y mantenimiento completo de jardines y espacios verdes.
-            </p>
-          </div>
-
-          {/* Valor 3 */}
-          <div className='text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mx-auto mb-4'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h4 className='text-xl font-bold text-gray-800 mb-3'>Calidad Garantizada</h4>
-            <p className='text-gray-600'>
-              Ofrecemos garantía en todos nuestros trabajos y mantenimiento post-instalación.
-            </p>
-          </div>
-        </div>
-
       </div>
     </section>
   );
