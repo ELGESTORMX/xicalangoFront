@@ -9,5 +9,5 @@ html {
 
 /* Opcional: Offset para compensar el navbar fijo */
 section {
-  scroll-margin-top: 15vh;
+  scroll-margin-top: 16px;
 }

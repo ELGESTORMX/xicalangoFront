@@ -50,7 +50,7 @@ export default function Navbar() {
                             <a href="#" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Inicio</a>
                             <a href="#aboutUs" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Nosotros</a>
                             <a href="#servicios" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Servicios</a>
-                            <a href="#galeriaProyectos" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Proyectos</a>
+                            <a href="#proyectos" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Proyectos</a>
                             <a href="#contacto" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Contacto</a>
                             <a href="/tienda" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Tienda en Línea</a>
                         </div>
