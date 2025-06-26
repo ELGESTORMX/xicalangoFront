@@ -18,115 +18,59 @@ export default function servicios() {
 
         {/* Servicios principales */}
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16'>
-          
-          {/* Servicio 1 - Diseño de Paisajes */}
-          <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-              </svg>
-            </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Diseño de Paisajes</h3>
-            <p className='text-gray-600 mb-4'>
-              Creamos diseños únicos y personalizados para cada espacio, considerando el clima, 
-              el suelo y las preferencias del cliente.
-            </p>
-            <ul className='text-gray-600 space-y-2'>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Planos y renders 3D
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Selección de plantas nativas
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Diseño sustentable
-              </li>
-            </ul>
-          </div>
 
-          {/* Servicio 2 - Jardinería Residencial */}
+          {/* Servicio 2 - Jardinería */}
           <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
             <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
               <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
               </svg>
             </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Jardinería Residencial</h3>
+            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Jardinería</h3>
             <p className='text-gray-600 mb-4'>
-              Transformamos jardines de casas y residencias privadas, creando espacios 
-              funcionales y hermosos para disfrutar en familia.
+              Servicios completos de jardinería para todo tipo de espacios, 
+              desde la plantación hasta el cuidado integral.
             </p>
             <ul className='text-gray-600 space-y-2'>
               <li className='flex items-center'>
                 <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Jardines familiares
+                Plantación y siembra
               </li>
               <li className='flex items-center'>
                 <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Patios y terrazas
+                Instalación de césped
               </li>
               <li className='flex items-center'>
                 <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Áreas de recreación
+                Sistemas de riego
               </li>
             </ul>
           </div>
 
-          {/* Servicio 3 - Proyectos Comerciales */}
-          <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-              </svg>
-            </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Proyectos Comerciales</h3>
-            <p className='text-gray-600 mb-4'>
-              Diseñamos y mantenemos espacios verdes para edificios comerciales, 
-              oficinas y complejos empresariales.
-            </p>
-            <ul className='text-gray-600 space-y-2'>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Edificios corporativos
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Centros comerciales
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Áreas comunes
-              </li>
-            </ul>
-          </div>
-
-          {/* Servicio 4 - Paisajismo Hotelero */}
+          {/* Servicio 4 - Paisajismo */}
           <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
             <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
               <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
               </svg>
             </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Paisajismo Hotelero</h3>
+            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Paisajismo</h3>
             <p className='text-gray-600 mb-4'>
-              Creamos ambientes espectaculares para hoteles y complejos turísticos, 
-              con mantenimiento profesional continuo.
+              Transformamos espacios exteriores en ambientes únicos, 
+              desde proyectos residenciales hasta complejos turísticos.
             </p>
             <ul className='text-gray-600 space-y-2'>
+              <li className='flex items-center'>
+                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
+                Espacios residenciales
+              </li>
               <li className='flex items-center'>
                 <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
                 Hoteles y resorts
               </li>
               <li className='flex items-center'>
                 <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Áreas de piscina
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Jardines temáticos
+                Áreas recreativas
               </li>
             </ul>
           </div>
@@ -156,34 +100,6 @@ export default function servicios() {
               <li className='flex items-center'>
                 <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
                 Riego y cuidado
-              </li>
-            </ul>
-          </div>
-
-          {/* Servicio 6 - Consultoría */}
-          <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-              </svg>
-            </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Consultoría Ecológica</h3>
-            <p className='text-gray-600 mb-4'>
-              Asesoramos en la selección de plantas, técnicas de cultivo y 
-              prácticas sustentables para tu proyecto.
-            </p>
-            <ul className='text-gray-600 space-y-2'>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Evaluación de suelos
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Plantas recomendadas
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Técnicas sostenibles
               </li>
             </ul>
           </div>
