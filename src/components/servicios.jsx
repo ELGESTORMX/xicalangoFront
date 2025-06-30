@@ -1,8 +1,93 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import residenciales from '../../public/images/categorias/residenciales.jpg';
+import hoteleros from '../../public/images/categorias/hoteleros.jpg';
+import comerciales from '../../public/images/2.jpg';
+import jardineros from '../../public/images/categorias/jardineria.jpg';
+import eventos from '../../public/images/categorias/eventos.jpg';
+export default function nuestrosServicios() {
+  const navigate = useNavigate();
+  
+  // Servicios principales que ofrece Xicalango
+  const servicios = [
+    {
+      id: 'residencial',
+      titulo: 'Proyectos Residenciales',
+      descripcion: 'Jardines familiares, patios y espacios exteriores para hogares',
+      imagenes: [
+        residenciales, // Imagen principal (frente)
+      ],
+      color: 'from-green-400 to-green-600'
+    },
+    {
+      id: 'hotelero',
+      titulo: 'Proyectos Hoteleros',
+      descripcion: 'Paisajismo para hoteles, resorts y complejos turísticos',
+      imagenes: [
+        hoteleros
+      ],
+      color: 'from-blue-400 to-blue-600'
+    },
+    {
+      id: 'comercial',
+      titulo: 'Espacios Comerciales',
+      descripcion: 'Paisajismo para negocios, locales comerciales y oficinas',
+      imagenes: [
+        comerciales
+      ],
+      color: 'from-purple-400 to-purple-600'
+    },
+    {
+      id: 'jardineria',
+      titulo: 'Jardinería y Mantenimiento',
+      descripcion: 'Mantenimiento, poda y cuidado integral de jardines',
+      imagenes: [
+        jardineros
+      ],
+      color: 'from-orange-400 to-orange-600'
+    },
+    {
+      id: 'eventos',
+      titulo: 'Eventos Especiales',
+      descripcion: 'Renta de macetas y decoración para eventos particulares, bodas y celebraciones',
+      imagenes: [
+        eventos
+      ],
+      color: 'from-pink-400 to-pink-600'
+    }
+  ];
 
-export default function servicios() {
+  const handleServicioClick = (servicioId) => {
+    // Navegar a la página específica del servicio
+    if (servicioId === 'eventos') {
+      navigate('/servicios/eventos');
+      window.scrollTo(0, 0);
+    } else if (servicioId === 'residencial') {
+      navigate('/servicios/residencial');
+      window.scrollTo(0, 0);
+    } else if (servicioId === 'hotelero') {
+      navigate('/servicios/hotelero');
+      window.scrollTo(0, 0);
+    } else if (servicioId === 'comercial') {
+      navigate('/servicios/comercial');
+      window.scrollTo(0, 0);
+    } else if (servicioId === 'jardineria') {
+      navigate('/servicios/jardineria');
+      window.scrollTo(0, 0);
+    } else {
+      // Para otros servicios, puedes crear páginas similares siguiendo el patrón
+      console.log(`Página de ${servicioId} en desarrollo`);
+      // Cuando tengas las otras páginas creadas, descomenta estas líneas:
+      // navigate(`/servicios/${servicioId}`);
+      // window.scrollTo(0, 0);
+      
+      // Por ahora, mostrar un mensaje al usuario
+      alert(`La página de ${servicioId} estará disponible pronto. Por ahora puedes contactarnos para más información.`);
+    }
+  };
+
   return (
-    <section id='servicios' className='w-full min-h-screen py-16 bg-white'>
+    <section id='servicios' className='w-full min-h-screen py-16 bg-gray-50'>
       <div className='max-w-7xl mx-auto px-6 lg:px-8'>
         
         {/* Título principal */}
@@ -12,97 +97,92 @@ export default function servicios() {
           </h2>
           <div className='w-24 h-1 bg-[#6FAD46] mx-auto mb-6'></div>
           <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-            Transformamos tus espacios con servicios integrales de paisajismo y jardinería
+            Descubre la amplia gama de servicios que ofrecemos en Xicalango. Cada especialidad está respaldada por años de experiencia y proyectos exitosos.
           </p>
         </div>
 
-        {/* Servicios principales */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16'>
-
-          {/* Servicio 2 - Jardinería */}
-          <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-              </svg>
+        {/* Grid de servicios */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-16'>
+          {servicios.map((servicio) => (
+            <div 
+              key={servicio.id} 
+              onClick={() => handleServicioClick(servicio.id)}
+              className='bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer group transform hover:-translate-y-2'
+            >
+              {/* Stack de imágenes */}
+              <div className='relative h-48 overflow-hidden'>
+                {/* Imagen trasera */}
+                <div className='absolute inset-0 transform rotate-3 scale-95 opacity-60 group-hover:rotate-6 transition-transform duration-500'>
+                  <img 
+                    src={servicio.imagenes[2]} 
+                    alt=""
+                    className='w-full h-full object-cover rounded-lg shadow-lg'
+                  />
+                </div>
+                
+                {/* Imagen media */}
+                <div className='absolute inset-0 transform -rotate-2 scale-98 opacity-80 group-hover:-rotate-3 transition-transform duration-500'>
+                  <img 
+                    src={servicio.imagenes[1]} 
+                    alt=""
+                    className='w-full h-full object-cover rounded-lg shadow-lg'
+                  />
+                </div>
+                
+                {/* Imagen principal (frente) */}
+                <div className='absolute inset-0 group-hover:scale-105 transition-transform duration-500'>
+                  <img 
+                    src={servicio.imagenes[0]} 
+                    alt={servicio.titulo}
+                    className='w-full h-full object-cover rounded-lg shadow-lg'
+                  />
+                  
+                  {/* Overlay con gradiente */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${servicio.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg`}></div>
+                  
+                  {/* Icono de ver más */}
+                  <div className='absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                    <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg'>
+                      <svg className='w-5 h-5 text-[#6FAD46]' fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Contenido */}
+              <div className='p-6'>
+                <h3 className='text-xl font-bold text-gray-800 mb-2 group-hover:text-[#6FAD46] transition-colors duration-300'>
+                  {servicio.titulo}
+                </h3>
+                <p className='text-gray-600 text-sm leading-relaxed mb-4'>
+                  {servicio.descripcion}
+                </p>
+                
+                {/* Botón de acción */}
+                <div className='flex items-center text-[#6FAD46] font-medium text-sm group-hover:text-[#5a9639] transition-colors duration-300'>
+                  <span>Ver más detalles</span>
+                  <svg className='w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300' fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </div>
+              </div>
             </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Jardinería</h3>
-            <p className='text-gray-600 mb-4'>
-              Servicios completos de jardinería para todo tipo de espacios, 
-              desde la plantación hasta el cuidado integral.
-            </p>
-            <ul className='text-gray-600 space-y-2'>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Plantación y siembra
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Instalación de césped
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Sistemas de riego
-              </li>
-            </ul>
-          </div>
+          ))}
+        </div>
 
-          {/* Servicio 4 - Paisajismo */}
-          <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-              </svg>
-            </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Paisajismo</h3>
-            <p className='text-gray-600 mb-4'>
-              Transformamos espacios exteriores en ambientes únicos, 
-              desde proyectos residenciales hasta complejos turísticos.
-            </p>
-            <ul className='text-gray-600 space-y-2'>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Espacios residenciales
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Hoteles y resorts
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Áreas recreativas
-              </li>
-            </ul>
-          </div>
-
-          {/* Servicio 5 - Mantenimiento */}
-          <div className='bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#6FAD46]'>
-            <div className='w-16 h-16 bg-[#6FAD46] rounded-full flex items-center justify-center mb-6'>
-              <svg className='w-8 h-8 text-white' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-            </div>
-            <h3 className='text-2xl font-bold text-gray-800 mb-4'>Mantenimiento</h3>
-            <p className='text-gray-600 mb-4'>
-              Servicios de mantenimiento continuo para garantizar que tus espacios 
-              verdes se mantengan siempre en perfecto estado.
-            </p>
-            <ul className='text-gray-600 space-y-2'>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Poda y fertilización
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Control de plagas
-              </li>
-              <li className='flex items-center'>
-                <span className='w-2 h-2 bg-[#6FAD46] rounded-full mr-3'></span>
-                Riego y cuidado
-              </li>
-            </ul>
-          </div>
+        {/* Call to Action */}
+        <div className='text-center'>
+          <h3 className='text-3xl font-bold text-gray-800 mb-4'>
+            ¿Necesitas alguno de estos servicios?
+          </h3>
+          <p className='text-xl text-gray-600 mb-8 max-w-2xl mx-auto'>
+            Contáctanos y descubre cómo podemos transformar tu espacio con nuestros servicios profesionales
+          </p>
+          <a href='#contacto' className='bg-[#6FAD46] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#5a9639] transition-colors duration-300 shadow-lg hover:shadow-xl'>
+            Solicitar Cotización
+          </a>
         </div>
 
       </div>

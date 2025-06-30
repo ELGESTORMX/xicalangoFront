@@ -43,7 +43,7 @@ export default function contacto() {
           </h2>
           <div className='w-24 h-1 bg-[#6FAD46] mx-auto mb-6'></div>
           <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-            Solicita  tu consulta gratuita y descubre cómo podemos hacer realidad tus ideas
+            Consúltanos y descubre cómo podemos hacer realidad tus ideas
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export default function contacto() {
           {/* Formulario de contacto */}
           <div className='bg-white rounded-2xl p-8 shadow-xl'>
             <h3 className='text-2xl font-bold text-gray-800 mb-6'>
-              Solicita tu cotización gratuita
+              Solicita tu cotización
             </h3>
             
             <form onSubmit={handleSubmit} className='space-y-6'>
@@ -272,10 +272,10 @@ export default function contacto() {
             <div className='bg-white rounded-2xl p-8 shadow-xl text-center'>
               <div className='text-4xl mb-4'>🌱</div>
               <h3 className='text-xl font-bold text-gray-800 mb-2'>
-                ¡Cotización Gratuita!
+                ¡Contáctanos y has realidad tu proyecto!
               </h3>
               <p className='text-gray-600'>
-                Visitamos tu espacio sin costo para darte la mejor propuesta personalizada
+                Visitamos para darte la mejor propuesta personalizada
               </p>
             </div>
           </div>

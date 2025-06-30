@@ -4,7 +4,6 @@ import Whatsapp from '../components/whatsappFlotante';
 import Hero from '../components/hero';
 import AboutUs from '../components/aboutUs';
 import Servicios from '../components/servicios';
-import GaleriaProyectos from '../components/galeriaProyectos';
 import PorqueElegirnos from '../components/porqueElegirnos';
 import Contacto from '../components/contacto';
 import Footer from '../components/footer';
@@ -16,7 +15,6 @@ function Index() {
       <Hero/>
       <AboutUs/>
       <Servicios/>
-      <GaleriaProyectos/>
       <PorqueElegirnos/>
       <Contacto/>
       <Footer/>

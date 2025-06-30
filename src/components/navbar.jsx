@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../../public/images/logo.png';
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev);
@@ -10,6 +13,34 @@ export default function Navbar() {
 
     const closeMenu = () => {
         setIsMenuOpen(false);
+    };
+
+    // Función para navegar a secciones
+    const navigateToSection = (sectionId) => {
+        closeMenu();
+        
+        if (location.pathname === '/') {
+            // Si ya estamos en la página principal, solo hacer scroll
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // Si estamos en otra página, navegar a inicio y luego hacer scroll
+            navigate('/');
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+    };
+
+    const navigateToHome = () => {
+        closeMenu();
+        navigate('/');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     useEffect(() => {
@@ -36,22 +67,21 @@ export default function Navbar() {
                         
                         {/* Logo y nombre */}
                         <div className='flex items-center'>
-                            <a href="#" className='flex items-center space-x-3'>
+                            <button onClick={navigateToHome} className='flex items-center space-x-3 cursor-pointer'>
                                 <img src={logo} alt="Xicalango Logo" className='h-10 w-10 rounded-full object-cover' />
                                 <div>
                                     <span className='text-xl font-bold text-gray-800'>Xicalango</span>
                                     <span className='block text-xs text-[#6FAD46] font-medium'>La Reserva Ecológica</span>
                                 </div>
-                            </a>
+                            </button>
                         </div>
 
                         {/* Navegación Desktop */}
                         <div className="hidden lg:flex items-center space-x-8">
-                            <a href="#" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Inicio</a>
-                            <a href="#aboutUs" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Nosotros</a>
-                            <a href="#servicios" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Servicios</a>
-                            <a href="#proyectos" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Proyectos</a>
-                            <a href="#contacto" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Contacto</a>
+                            <button onClick={navigateToHome} className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Inicio</button>
+                            <button onClick={() => navigateToSection('aboutUs')} className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Nosotros</button>
+                            <button onClick={() => navigateToSection('servicios')} className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Servicios</button>
+                            <button onClick={() => navigateToSection('contacto')} className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Contacto</button>
                             <a href="/tienda" className="text-gray-700 hover:text-[#6FAD46] font-medium transition-colors duration-300">Tienda en Línea</a>
                         </div>
 
@@ -93,41 +123,36 @@ export default function Navbar() {
                 isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
             }`}>
                 <div className='px-6 py-4 space-y-4'>
-                    <a 
-                        href="#" 
-                        onClick={closeMenu}
-                        className="block text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
+                    <button 
+                        onClick={navigateToHome}
+                        className="block w-full text-left text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
                     >
                         🏠 Inicio
-                    </a>
-                    <a 
-                        href="#aboutUs" 
-                        onClick={closeMenu}
-                        className="block text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
+                    </button>
+                    <button 
+                        onClick={() => navigateToSection('aboutUs')}
+                        className="block w-full text-left text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
                     >
                         👥 Nosotros
-                    </a>
-                    <a 
-                        href="#servicios" 
-                        onClick={closeMenu}
-                        className="block text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
+                    </button>
+                    <button 
+                        onClick={() => navigateToSection('servicios')}
+                        className="block w-full text-left text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
                     >
                         🌿 Servicios
-                    </a>
-                    <a 
-                        href="#galeriaProyectos" 
-                        onClick={closeMenu}
-                        className="block text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
+                    </button>
+                    <button 
+                        onClick={() => navigateToSection('galeriaProyectos')}
+                        className="block w-full text-left text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
                     >
                         📸 Proyectos
-                    </a>
-                    <a 
-                        href="#contacto" 
-                        onClick={closeMenu}
-                        className="block text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
+                    </button>
+                    <button 
+                        onClick={() => navigateToSection('contacto')}
+                        className="block w-full text-left text-gray-700 hover:text-[#6FAD46] font-medium transition-colors py-2"
                     >
                         📞 Contacto
-                    </a>
+                    </button>
                     <a 
                         href="/tienda" 
                         onClick={closeMenu}
